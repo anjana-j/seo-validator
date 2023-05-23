@@ -58,7 +58,10 @@ class SEOChecker:
         print(f"SEO report generated: {report_file}")
 
 # Test the SEOChecker class with a sample URL
-url = 'https://getbootstrap.com'
+connection = 'https://'
+url_sender = 'absoluteadvantagefinancial.com'
+
+url = connection + url_sender
 
 if check_website_exists(url):
     print("Website exist.")
