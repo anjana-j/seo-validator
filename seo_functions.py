@@ -238,7 +238,7 @@ def sitemap_xml_links(url, results):
     response = requests.head(sitemap_url)
 
     if response.status_code == 200:
-        results['Tag'].append('Sitemap.xml')
+        results['Tag'].append('Sitemap.xml Links')
 
         # Get the XML content of the sitemap
         sitemap_response = requests.get(sitemap_url)
