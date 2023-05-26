@@ -36,7 +36,7 @@ class SEOChecker:
         check_og_values(source_code, results)
         check_canonical_tag(source_code, results)
         
-        #check_json_ld(source_code, results)
+        check_json_ld(source_code, results)
 
         check_h1_tags(source_code, results)
         check_img_alt_text(source_code, results)
@@ -53,13 +53,15 @@ class SEOChecker:
         # Generate report with dynamic file name
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
         url_without_protocol = self.url.replace("https://", "")
-        report_file = f"seo_report_{url_without_protocol}_{timestamp}.html"
+
+        report_folder = './reports' 
+        report_file = f"{report_folder}/seo_report_{url_without_protocol}_{timestamp}.html"
         df.to_html(report_file, index=False, escape=False)
         print(f"SEO report generated: {report_file}")
 
 # Test the SEOChecker class with a sample URL
 connection = 'https://'
-url_sender = 'absoluteadvantagefinancial.com'
+url_sender = 'getbootstrap.com'
 
 url = connection + url_sender
 
