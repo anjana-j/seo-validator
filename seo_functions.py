@@ -150,21 +150,26 @@ def check_json_ld(source_code, results):
         # Extract the JSON-LD content
         json_ld_content = script_tag.string
 
-        try:
-            # Parse the JSON content
-            json_data = json.loads(json_ld_content)
+        if json_ld_content:
+            try:
+                # Parse the JSON content
+                json_data = json.loads(json_ld_content)
 
-            for key, value in json_data.items():
-                results['Tag'].append(key)
-                results['Value'].append(value)
+                for key, value in json_data.items():
+                    results['Tag'].append(key)
+                    results['Value'].append(value)
 
-        except json.JSONDecodeError:
+            except json.JSONDecodeError:
+                results['Tag'].append('JSON-LD')
+                results['Value'].append('Invalid JSON-LD content.')
+        else:
             results['Tag'].append('JSON-LD')
-            results['Value'].append('Invalid JSON-LD content.')
+            results['Value'].append(None)
 
     else:
         results['Tag'].append('JSON-LD')
         results['Value'].append(None)
+
 
 
 def check_h1_tags(source_code, results):

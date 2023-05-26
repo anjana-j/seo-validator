@@ -3,7 +3,7 @@
 #### 1. Install using requirements.txt file
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 #### 2. Change the URL in `seo_checker.py` file
