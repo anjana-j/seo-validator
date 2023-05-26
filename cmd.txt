@@ -1,0 +1,5 @@
+lighthouse https://URL --output html --output csv --chrome-flags="--headless" --only-categories=seo --view
+lighthouse https://URL --output html --output csv --chrome-flags="--headless" --view
+
+
+
